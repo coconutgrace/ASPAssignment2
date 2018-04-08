@@ -8,7 +8,9 @@
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/StyleSheet.css" />
     </environment>
+
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
@@ -17,46 +19,75 @@
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">LymcWeb</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+    <div class="container1">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @*<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/logo.png" /></a>*@
+
+
+                </div>
+
+                <div id="navbar1" class="navbar-collapse collapse">
+                    <div class="nav navbar-nav">
+                        <div class="active">
+                            <a asp-area="" asp-controller="Home" asp-action="Index">Home</a></>
+                            <a asp-area="" asp-controller="Home" asp-action="About">About</a>
+                            <a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                        </div>
+                    </div>
 
                     @if ((await AuthorizationService.AuthorizeAsync(User, "AllRoles")).Succeeded)
                     {
-                        <li><a asp-area="" asp-controller="Boats" asp-action="Index">Boats</a></li>
-                        <li><a asp-area="" asp-controller="Reservations" asp-action="Index">Reservation</a></li>
+
+                        <a asp-area="" asp-controller="Boats" asp-action="Index">Boats</a>
+
+                        <a asp-area="" asp-controller="Reservations" asp-action="Index">Reservation</a>
+
                     }
-                    
+
 
                     @if ((await AuthorizationService.AuthorizeAsync(User, "RequireAdminRole")).Succeeded)
                     {
-                        <li><a asp-area="" asp-controller="ApplicationUsers" asp-action="Index">Users</a></li>
+
+                        <a asp-area="" asp-controller="ApplicationUsers" asp-action="Index">Users</a>
                     }
 
-                    
-                </ul>
-                @await Html.PartialAsync("_LoginPartial")
+
+                    <div id="navbar2" class="navbar-collapse collapse">
+                        <div class="nav navbar-nav navbar-right">
+
+                            @await Html.PartialAsync("_LoginPartial")
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <!--/.nav-collapse -->
             </div>
-        </div>
-    </nav>
+            <!--/.container-fluid -->
+        </nav>
+    </div>
+
+
+
+
+
+
+
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2018 - LymcWeb</p>
+            <p>Copyright &copy; 2015 Lower Mainland Yacht Cooperative. All Rights Reserved</p>
         </footer>
     </div>
 

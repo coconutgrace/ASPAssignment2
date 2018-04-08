@@ -6,9 +6,22 @@
     <title>@ViewData["Title"] - LymcWeb</title>
 
     <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
-        <link rel="stylesheet" href="~/css/StyleSheet.css" />
+
+        <!-- Animate.css -->
+       
+        <link rel="stylesheet" href="~/stuff/css/animate.css">
+        <!-- Icomoon Icon Fonts-->
+        <link rel="stylesheet" href="~/stuff/css/icomoon.css">
+        <!-- Bootstrap  -->
+        <link rel="stylesheet" href="~/stuff/css/bootstrap.css">
+        <!-- Owl Carousel -->
+       
+        <link rel="stylesheet" href="~/stuff/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="~/stuff/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="~/stuff/css/style.css">
+
+        <!-- Modernizr JS -->
+        <script src="~/stuff/js/modernizr-2.6.2.min.js"></script>
     </environment>
 
     <environment exclude="Development">
@@ -19,75 +32,58 @@
     </environment>
 </head>
 <body>
-    <div class="container1">
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    @*<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/logo.png" /></a>*@
-
-
-                </div>
-
-                <div id="navbar1" class="navbar-collapse collapse">
-                    <div class="nav navbar-nav">
-                        <div class="active">
-                            <a asp-area="" asp-controller="Home" asp-action="Index">Home</a></>
-                            <a asp-area="" asp-controller="Home" asp-action="About">About</a>
-                            <a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
-                        </div>
-                    </div>
-
-                    @if ((await AuthorizationService.AuthorizeAsync(User, "AllRoles")).Succeeded)
-                    {
-
-                        <a asp-area="" asp-controller="Boats" asp-action="Index">Boats</a>
-
-                        <a asp-area="" asp-controller="Reservations" asp-action="Index">Reservation</a>
-
-                    }
-
-
-                    @if ((await AuthorizationService.AuthorizeAsync(User, "RequireAdminRole")).Succeeded)
-                    {
-
-                        <a asp-area="" asp-controller="ApplicationUsers" asp-action="Index">Users</a>
-                    }
-
-
-                    <div id="navbar2" class="navbar-collapse collapse">
-                        <div class="nav navbar-nav navbar-right">
-
-                            @await Html.PartialAsync("_LoginPartial")
-
-                        </div>
-
-
-                    </div>
-
-                </div>
-                <!--/.nav-collapse -->
+    <header>
+        <div class="container text-center">
+            <div class="fh5co-navbar-brand">
+                @*<a class="fh5co-logo" href="index.html">LMYC</a>*@
+                <a class="fh5co-logo" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/logo.png" /></a>
             </div>
-            <!--/.container-fluid -->
-        </nav>
-    </div>
+            <nav id="fh5co-main-nav" role="navigation">
+
+                <a asp-area="" asp-controller="Home" asp-action="Index">Home&nbsp;&nbsp;</a>
+                @*<a asp-area="" asp-controller="Home" asp-action="About">About&nbsp;&nbsp;</a>*@
+                <a asp-area="" asp-controller="Home" asp-action="Contact">Contact&nbsp;&nbsp;</a>
+                @if ((await AuthorizationService.AuthorizeAsync(User, "AllRoles")).Succeeded)
+                {
+
+                    <a asp-area="" asp-controller="Boats" asp-action="Index">Boats&nbsp;&nbsp;</a>
+
+                        <a asp-area="" asp-controller="Reservations" asp-action="Index">Reservation&nbsp;&nbsp;</a>
+
+                }
 
 
+                @if ((await AuthorizationService.AuthorizeAsync(User, "RequireAdminRole")).Succeeded)
+                {
 
-
+                    <a asp-area="" asp-controller="ApplicationUsers" asp-action="Index">Users&nbsp;&nbsp;</a>
+                }
+                @await Html.PartialAsync("_LoginPartial")
+            </nav>
+        </div>
+    </header>
 
 
 
     <div class="container body-content">
         @RenderBody()
+    
         <hr />
-        <footer>
-            <p>Copyright &copy; 2015 Lower Mainland Yacht Cooperative. All Rights Reserved</p>
+       <footer>
+            <div id="footer" class="fh5co-border-line">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 text-center">
+                            <p>Copyright &copy; 2015 Lower Mainland Yacht Cooperative. All Rights Reserved</p>
+                            <p class="fh5co-social-icons">
+                                <a href="#"><i class="icon-twitter-with-circle"></i></a>
+                                <a href="#"><i class="icon-facebook-with-circle"></i></a>
+                                <a href="#"><i class="icon-instagram-with-circle"></i></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </footer>
     </div>
 
@@ -95,8 +91,27 @@
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
+        <!-- jQuery -->
+        
+        <script src="~/stuff/js/jquery.min.js"></script>
+        <!-- jQuery Easing -->
+        <script src="~/stuff/js/jquery.easing.1.3.js"></script>
+        <!-- Bootstrap -->
+        <script src="~/stuff/js/bootstrap.min.js"></script>
+        <!-- Waypoints -->
+        <script src="~/stuff/jsjquery.waypoints.min.js"></script>
+        <!-- Google Map -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+        <!-- Owl carousel -->
+        <script src="~/stuff/js/owl.carousel.min.js"></script>
+        <script src="~/stuff/js/google_map.js"></script>
+        <!-- Stellar -->
+        <script src="~/stuff/js/jquery.stellar.min.js"></script>
+        <!-- Main JS (Do not remove) -->
+        <script src="~/stuff/js/main.js"></script>
+
     </environment>
-    <environment exclude="Development">
+    @*<environment exclude="Development">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
                 asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
                 asp-fallback-test="window.jQuery"
@@ -110,8 +125,9 @@
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
+    </environment>*@
 
     @RenderSection("Scripts", required: false)
 </body>
+
 </html>

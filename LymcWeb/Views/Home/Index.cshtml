@@ -2,6 +2,7 @@
     ViewData["Title"] = "Home Page";
 }
 
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -12,49 +13,38 @@
     <div class="carousel-inner" role="listbox">
         <div class="item active">
             <img src="~/images/lmyc4.jpg" alt="ASP.NET" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    <b>
-                        WELCOME TO LMYC ORGANIZATION
-                    </b>
-                    <a class="btn btn-default" href="http://www.lmyc.ca/home">
-                        Learn More
-                    </a>
-                </p>
-            </div>
+            @*<div class="carousel-caption" role="option">
+                    <p>
+                        <b>
+                            WELCOME TO LMYC ORGANIZATION
+                        </b>
+                        <a class="btn btn-default" href="http://www.lmyc.ca/home">
+                            Learn More
+                        </a>
+                    </p>
+                </div>*@
         </div>
         <div class="item">
             <img src="~/images/lmyc5.jpg" alt="Visual Studio" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    The Lower Mainland Yacht Cooperative (LMYC) is a provincially registered and regulated non-profit organization, which is owned and operated by its members. LMYC is governed by the British Columbia Co-operative Act.
-                    <a class="btn btn-default" href="http://www.lmyc.ca/home">
-                        Learn More
-                    </a>
-                </p>
-            </div>
+            @*<div class="carousel-caption" role="option">
+                    <p>
+                        The Lower Mainland Yacht Cooperative (LMYC) is a provincially registered and regulated non-profit organization, which is owned and operated by its members. LMYC is governed by the British Columbia Co-operative Act.
+                        <a class="btn btn-default" href="http://www.lmyc.ca/home">
+                            Learn More
+                        </a>
+                    </p>
+                </div>*@
         </div>
         <div class="item">
             <img src="~/images/lmyc6.jpg" alt="Package Management" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    The mission and purpose of the Lower Mainland Yacht co-op is to promote Affordable, Safe and Enjoyable recreational sailing.
-                    <a class="btn btn-default" href="http://www.lmyc.ca/home">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="~/images/banner4.svg" alt="Microsoft Azure" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    As a co-op, it is possible to provide boats, equipment and sailing skill development at a fraction of the cost of any other sailing program you can find. The low cost, however, does require full participation of the members to make it succeed. All members are expected to contribute time for boat maintenance or helping with other activities toward our common goal.
-                    <a class="btn btn-default" href="http://www.lmyc.ca/home">
-                        Learn More
-                    </a>
-                </p>
-            </div>
+            @*<div class="carousel-caption" role="option">
+                    <p>
+                        The mission and purpose of the Lower Mainland Yacht co-op is to promote Affordable, Safe and Enjoyable recreational sailing.
+                        <a class="btn btn-default" href="http://www.lmyc.ca/home">
+                            Learn More
+                        </a>
+                    </p>
+                </div>*@
         </div>
     </div>
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -67,40 +57,46 @@
     </a>
 </div>
 
-<div class="row">
-    <div class="col-md-3">
-        <h2>LMYC Application</h2>
-        <ul>
-            <li>For complete LMYC Membership requirements, take a look at the membership page...</li>
-        </ul>
+<div id="fh5co-blog-section">
+    <div class="container">
+        <div class="heading-section text-center">
+            <h2><br>WELCOME to LMYC </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-4 blog-section">
+                @*<span>03 <small>July 2016</small></span>*@
+                @*<h3><a href="#">Mourntains countries Vokalia</a></h3>*@
+                <h3><a>MEMBERSHIP</a></h3>
+
+                <p>
+                    <ul>
+                        <li>You don't need to own a boat or even know how to sail in order become a member of one of White Rock's best kept secrets – the Lower Mainland Yacht Co-op (LMYC). All you need is an interest in sailing.</li>
+                        <li>You can learn to be a skipper on one of our seven boats; join the fun on long weekend cruises or simply sail around Semiahmoo Bay with other members... all for an affordable price!</li>
+                    </ul>
+                </p>
+                <a class="btn btn-primary" href="http://www.lmyc.ca/home">Read More</a>
+            </div>
+            <div class="col-md-4 blog-section">
+                @*<span>02 <small>July 2016</small></span>*@
+                <h3><a>OPERATIONS</a></h3>
+                <p>
+                    <ul>
+                        <li>To maintain our co-op interest and it's continuing success, an annual election is held in February to select the Commodore, First and Second Vice Commodores, Treasurer and Secretary.</li>
+                        <li>Meetings are held on the third Thursday of each month, except July, August and December. Meetings are held at the Rotary Field House in White Rock at 1930 hours. Annual dues are payable by February 1st each year. The Annual General Meeting is held at the February meeting.</li>
+                    </ul>
+                </p>
+                <a class="btn btn-primary" href="http://www.lmyc.ca/home">Read More</a>
+            </div>
+            <div class="col-md-4 blog-section">
+                @*<span>01 <small>July 2016</small></span>*@
+                <h3><a>ORGANIZATION</a></h3>
+                <p>
+                    <ul>
+                        <li>The Lower Mainland Yacht Cooperative (LMYC) is a provincially registered and regulated non-profit organization, which is owned and operated by its members. LMYC is governed by the British Columbia Co-operative Act.</li>
+                        <li>The mission and purpose of the Lower Mainland Yacht co-op is to promote Affordable, Safe and Enjoyable recreational sailing.</li>
+                    </ul>
+                </p><a class="btn btn-primary" href="http://www.lmyc.ca/home">Read More</a>
+            </div>
+        </div>
     </div>
-    <div class="col-md-3">
-        <h2>OPERATIONS</h2>
-        <ul>
-            <li>To maintain our co-op interest and it's continuing success, an annual election is held in February to select the Commodore, First and Second Vice Commodores, Treasurer and Secretary.</li>
-            <li>Meetings are held on the third Thursday of each month, except July, August and December. Meetings are held at the Rotary Field House in White Rock at 1930 hours. Annual dues are payable by February 1st each year. The Annual General Meeting is held at the February meeting.</li>
-        </ul>
-    </div>
-    @*<div class="col-md-3">
-            <h2>ORGANIZATION</h2>
-            <ul>
-                <li>The Lower Mainland Yacht Cooperative (LMYC) is a provincially registered and regulated non-profit organization, which is owned and operated by its members. LMYC is governed by the British Columbia Co-operative Act.</li>
-                <li>The mission and purpose of the Lower Mainland Yacht co-op is to promote Affordable, Safe and Enjoyable recreational sailing.</li>
-                <li>As a co-op, it is possible to provide boats, equipment and sailing skill development at a fraction of the cost of any other sailing program you can find. The low cost, however, does require full participation of the members to make it succeed. All members are expected to contribute time for boat maintenance or helping with other activities toward our common goal.</li>
-            </ul>
-        </div>*@
-    <div class="col-md-3">
-        <h2>THE FLEET</h2>
-        <ul>
-            <li><b>OUR CURRENT FLEET CONSISTS OF THREE 1979 27 FOOT C&C MK3, A 1983 25 FOOT CAL 25 MK2, A 1996 CATALINA 28 MKII AND A 1985 27 FOOT C&C MK5.</b></li>
-            <li>All are normally moored off the end of the White Rock pier. During the summer, we station one of our boats at Lund, to accommodate those who wish to sail the relative wilderness of the Desolation Sound area.</li>
-        </ul>
-    </div>
-    <div class="col-md-3">
-       @* <h2>THE FLEET</h2>*@
-        <ul>
-            <li>All our vessels are great all-around sailboats, with large cockpits, comfortable cabins, sleep at least 4 and are perfect for sailing in Semiahmoo Bay or cruising the Gulf Islands. All have required safety equipment, VHS marine radios, roller furling foresails, marine heads with holding tanks and many other amenities.</li>
-            <li>Our priority is to keep the fleet in safe and seaworthy condition. Annual bottom painting and upgrades are usually accomplished at the beginning of each sailing season and the boats are maintained on an ongoing basis throughout the year by assigned teams of members. Sails, outboards, rigging, docking lines etc are replaced on an ongoing basis as needed.</li>
-        </ul>
-    </div>
-</div>
+</div><!-- end: fh5co-blog-section -->
